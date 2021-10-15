@@ -21,7 +21,8 @@ $ git clone https://github.com/Ninkuk/Wallpaper-Automation.git
 4. Place the keys in [credentials.json](credentials.json)
 
 ## Usage
-### Cron (Scheduler) Instructions
+### Linux
+#### Cron (Scheduler) Instructions
 ```bash
 $ crontab -e
 ```
@@ -32,7 +33,7 @@ then at the bottom of the file add this line and replace `PATH_TO_FOLDER` with t
 
 The cron pattern above sets a new wallpaper every hour. If you want some other scheduling pattern please refer here: https://crontab.guru/examples.html
 
-### Bash Aliases Instructions
+#### Bash Aliases Instructions
 
 To get new wallpaper on demand, add this line to your bash aliases file and replace `PATH_TO_FOLDER` with the path to the cloned repo location
 ```bash
@@ -46,7 +47,17 @@ alias archive_wall='bash PATH_TO_FOLDER/archive_wall.sh'
 ```
 now you can archive wallpapers by typing the following in the terminal (make sure to reload the terminal after making change to bash aliases file)
 
-### Add/Modify Search Terms
+### Windows
+#### Task Scheduler Instructions
+ - Open the Windows Task Scheduler
+ - Once opened, on the right side in the Actions tab, click on Create Basic task. Once you click, the create basic task wizard opens up.
+ - Define the name and description, then click on Next.
+ - Specify the task frequency and also the subsequent questions about that.
+ - In the Action tab, choose "Start a program"
+ - Click on 'Browse' and select the `wallpaper.py` file in this folder.
+ - Confirm the selections and click on Finish.
+
+#### Add/Modify Search Terms
 To add, edit or remove search keywords you can edit the [search-term.txt](search-terms.txt) file
 
 ## Contributing
