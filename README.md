@@ -2,14 +2,19 @@
 This is written for Linux computers but if you have experience with Task Schedulers you can make it work on Windows and Mac too.
 
 ## Table of Contents
-* [Installation](#installation)
-* [Usage](#usage)
-  * [Cron (Scheduler) Instructions](#cron-scheduler-instructions)
-  * [Bash Aliases Instructions](#bash-aliases-instructions)
-  * [Add/Modify Search Terms](#addmodify-search-terms)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact-me)
+- [Wallpaper Automation](#wallpaper-automation)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Linux](#linux)
+      - [Cron (Scheduler) Instructions](#cron-scheduler-instructions)
+      - [Bash Aliases Instructions](#bash-aliases-instructions)
+    - [Windows](#windows)
+      - [Task Scheduler Instructions](#task-scheduler-instructions)
+      - [Add/Modify Search Terms](#addmodify-search-terms)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Contact Me](#contact-me)
 
 ## Installation
 1. Clone this repository
