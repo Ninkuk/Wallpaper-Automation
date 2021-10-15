@@ -1,13 +1,16 @@
-import os
-from random import getrandbits
+import random
 import wallpaper_unsplash
 import wallpaper_pexels
+import wallpaper_wsupercars
 import datetime
+import utils
 
 if __name__ == '__main__':
     print(datetime.datetime.now())
 
-    if getrandbits(1):
+    source = random.choice(['Pexels', 'Unsplash', 'WSupercars'])
+
+    if source == 'Pexels':
         print('Pexels')
         mobile, desktop, square = [], [], []
 
@@ -17,10 +20,16 @@ if __name__ == '__main__':
             mobile, desktop, square = wallpaper_pexels.sort_photos(photos)
 
         wallpaper_pexels.get_wallpapers(desktop)
-        wallpaper_pexels.set_wallpaper()
-    else:
+        utils.set_wallpaper()
+
+    elif source == 'Unsplash':
         print('Unsplash')
         wallpaper_unsplash.get_wallpapers(wallpaper_unsplash.get_data())
-        wallpaper_unsplash.set_wallpaper()
+        utils.set_wallpaper()
+
+    elif source == 'WSupercars':
+        print('WSupercars')
+        wallpaper_wsupercars.get_wallpapers()
+        utils.set_wallpaper()
 
     print()
