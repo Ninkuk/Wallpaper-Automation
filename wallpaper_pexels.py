@@ -1,10 +1,8 @@
-from pathlib import Path
-import glob
-import os
 import random
 import requests
 import datetime
 import json
+import utils
 
 def get_data():
     with open('search-terms.txt') as f:
@@ -53,26 +51,11 @@ def get_wallpapers(wallpapers):
     random_wallpapers = random.choices(wallpapers, k=5)
     wallpaper = random.choice(random_wallpapers)
 
-    home = str(Path.home())
     id = str(wallpaper["id"])
     url = wallpaper["src"]["original"]
     print(id + ": " + url)
-    file_name = home + '/Pictures/Wallpapers/wallpaper.jpeg'
-    r = requests.get(url)
-    with open(file_name, 'wb') as wall:
-        wall.write(r.content)
-
-
-def set_wallpaper():
-    home = str(Path.home())
-    file_name = home + '/Pictures/Wallpapers/wallpaper.jpeg'
-    try:
-        SCHEMA = "org.gnome.desktop.background"
-        KEY = "picture-uri"
-        gsettings = Gio.Settings.new(SCHEMA)
-        gsettings.set_string(KEY, file_name)
-    except:
-        pass
+    
+    utils.save_image(url)
 
 
 if __name__ == '__main__':
@@ -85,5 +68,5 @@ if __name__ == '__main__':
         mobile, desktop, square = sort_photos(photos)
 
     get_wallpapers(desktop)
-    set_wallpaper()
+    utils.set_wallpaper()
     print()
